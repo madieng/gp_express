@@ -1,0 +1,9 @@
+GP EXPRESS
+
+- Gestion des GP : Un GP doit obligatoirement avoir un nom, un prénom, minimum 2 numéros (france et sénégal par exemple), un pays, une ville 
+
+- Gestion des colis : Un colis doit avoir un type (valise, enveloppe, téléphone, etc.), un poids et tarif
+
+- Gestion des tarifs : 
+
+- Gestion des clients : 
