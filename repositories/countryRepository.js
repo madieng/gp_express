@@ -1,4 +1,5 @@
-let Country = require('../models/country')
+let CountryModel = require('../models/countryModel')
+require('../models/gpModel')
 require('../config/db')
 
 class CountryRepository {
@@ -9,12 +10,12 @@ class CountryRepository {
     // }
 
     save(data) {
-        let country = new Country({
+        let countryModel = new CountryModel({
             name: data.country,
             telephoneCode: data.telephoneCode,
         })
 
-        country.save((err) => {
+        countryModel.save((err) => {
             if (err) return next(err)
 
             console.log("Saved : " + data.country + " --- " + data.telephoneCode)
@@ -22,7 +23,15 @@ class CountryRepository {
     }
 
     findAll() {
-       return Country.find({})
+       return CountryModel.find({}).populate('gp')
+    }
+
+    findById(id) {
+       return CountryModel.findById(id).populate('gp')
+    }
+
+    static findIdByName(name) {
+       return CountryModel.findOne({ name: name })
     }
 }
 

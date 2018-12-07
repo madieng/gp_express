@@ -1,14 +1,10 @@
 let route = require('express').Router()
-let CountryRepository = require('../repositories/country')
+let CountryRepository = require('../repositories/countryRepository')
+let countryController = require('../controllers/countryController')
 
 
-route.get('/', (request, response) => {
-    let countryRepository = new CountryRepository();
-    countryRepository.findAll().then((countries) => {
-        response.json(countries);
-    })
+route.get('/', countryController.index)
 
-    
-})
+route.get('/:id', countryController.detail)
 
 module.exports = route

@@ -1,21 +1,16 @@
 let express = require('express')
-let nunjucks = require('nunjucks')
-
+let bodyParser = require('body-parser')
 
 let app = express()
 
-nunjucks.configure('views', {
-    autoescape: true,
-    express: app
-})
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use('/dist', express.static(__dirname + '/node_modules/bootstrap/dist/'))
+// parse application/json
+app.use(bodyParser.json())
 
-// app.get('/', (request, response) => {
-//     response.status(200).json(['toto', 'tata'])
-// })
-
-app.use('/api/countries', require('./routes/country'))
+// Routes
+app.use('/api', require('./routes/index'))
 
 let server = app.listen(3000, function(){
     console.log('app running on port:', server.address().port)
