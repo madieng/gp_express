@@ -1,15 +1,15 @@
 let route = require('express').Router()
 
-let gpController = require('../controllers/gpController')
-let countryController = require('../controllers/countryController')
+let gp_controller = require('../controllers/gp.controller')
+let country_controller = require('../controllers/country.controller')
 
 // GP
-route.get('/gps', gpController.index)
-route.get('/gp/:id', gpController.detail)
-route.post('/gp/create', gpController.create)
+route.get('/gps', gp_controller.index)
+route.get('/gp/:id', gp_controller.detail)
+route.post('/gp/create', gp_controller.create)
 
 // COUNTRY
-route.get('/countries', countryController.index)
-route.get('/country/:id', countryController.detail)
+route.get('/countries', country_controller.index)
+route.get('/country/:id', country_controller.detail)
 
 module.exports = route

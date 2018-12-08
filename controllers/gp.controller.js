@@ -1,4 +1,4 @@
-let GpRepository = require('../repositories/gpRepository')
+let GpRepository = require('../repositories/gp.repository')
 
 let gpRepository = new GpRepository()
 

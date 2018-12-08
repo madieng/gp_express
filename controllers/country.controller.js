@@ -1,4 +1,4 @@
-let CountryRepository = require('../repositories/countryRepository')
+let CountryRepository = require('../repositories/country.repository')
 
 let countryRepository = new CountryRepository();
 

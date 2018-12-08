@@ -1,5 +1,5 @@
-let CountryModel = require('../models/countryModel')
-require('../models/gpModel')
+let CountryModel = require('../models/country')
+require('../models/gp')
 require('../config/db')
 
 class CountryRepository {

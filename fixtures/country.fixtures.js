@@ -1,5 +1,5 @@
 let csv = require('csvtojson')
-let CountryRepository = require('../repositories/country')
+let CountryRepository = require('../repositories/country.repository')
 require('../config/db')
 require('../models/country')
 
