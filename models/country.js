@@ -8,7 +8,7 @@ let countrySchema = new Schema({
 
 countrySchema.virtual('gp', {
     'ref': 'Gp',
-    'localField': 'gp',
+    'localField': 'gps',
     'foreignField': '_id'
 })
 

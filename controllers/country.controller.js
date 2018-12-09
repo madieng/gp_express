@@ -1,15 +1,13 @@
-let CountryRepository = require('../repositories/country.repository')
-
-let countryRepository = new CountryRepository();
+let countryModel = require('../models/country')
 
 exports.index = (request, response) => {
-    countryRepository.findAll().then((countries) => {
+    countryModel.find({}).populate('gps').then((countries) => {
         response.json(countries);
     })
 }
 
 exports.detail = (request, response) => {
-    countryRepository.findById(request.params.id).then((country) => {
+    countryModel.findById(request.params.id).populate('gps').then((country) => {
         response.json(country);
     })
 }

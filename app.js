@@ -10,7 +10,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // Routes
-app.use('/api', require('./routes/index'))
+// app.use('/api', require('./routes/index'))
+app.use('/api/gps', require('./routes/gp'))
+app.use('/api/countries', require('./routes/country'))
 
 let server = app.listen(3000, function(){
     console.log('app running on port:', server.address().port)
